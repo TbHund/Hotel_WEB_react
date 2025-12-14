@@ -1,0 +1,202 @@
+/* CSS Variables для темизации */
+:root {
+    --hospitality-beige: #F5E6D3;
+    --hospitality-gold: #D4AF37;
+    --hospitality-white: #FFFFFF;
+    --hospitality-dark-beige: #E8D5B7;
+    --hospitality-light-gold: #F4E4BC;
+    --transition-smooth: all 0.3s ease;
+}
+
+/* Основные стили */
+body {
+    background-color: var(--hospitality-beige);
+    color: #333;
+}
+
+/* Flexbox/Grid Layout */
+.hospitality-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.hospitality-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.hospitality-card {
+    background: var(--hospitality-white);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: var(--transition-smooth);
+}
+
+/* Псевдоклассы */
+.hospitality-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 16px rgba(212, 175, 55, 0.2);
+}
+
+.hospitality-button {
+    background-color: var(--hospitality-gold);
+    color: var(--hospitality-white);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+}
+
+.hospitality-button:hover {
+    background-color: var(--hospitality-light-gold);
+    transform: scale(1.05);
+}
+
+.hospitality-button:active {
+    transform: scale(0.98);
+}
+
+.hospitality-button:focus {
+    outline: 2px solid var(--hospitality-gold);
+    outline-offset: 2px;
+}
+
+.hospitality-input {
+    border: 2px solid var(--hospitality-dark-beige);
+    border-radius: 4px;
+    padding: 0.75rem;
+    transition: var(--transition-smooth);
+}
+
+.hospitality-input:focus {
+    border-color: var(--hospitality-gold);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+}
+
+/* CSS Transitions/Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hospitality-fade-in {
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+.hospitality-slide-in {
+    animation: slideIn 0.3s ease-out;
+}
+
+/* Адаптивный дизайн */
+@media (max-width: 768px) {
+    .hospitality-grid {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+    }
+    
+    .hospitality-card {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hospitality-button {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Семантические классы */
+.hospitality-header {
+    background: linear-gradient(135deg, var(--hospitality-gold), var(--hospitality-light-gold));
+    color: var(--hospitality-white);
+    padding: 2rem;
+    text-align: center;
+}
+
+.hospitality-footer {
+    background-color: var(--hospitality-dark-beige);
+    padding: 1.5rem;
+    text-align: center;
+    margin-top: auto;
+}
+
+.hospitality-accent {
+    color: var(--hospitality-gold);
+    font-weight: bold;
+}
+
+/* Дополнительные семантические классы */
+.hospitality-section {
+    padding: 2rem 0;
+    background-color: var(--hospitality-white);
+    border-radius: 8px;
+    margin: 1rem 0;
+}
+
+.hospitality-link {
+    color: var(--hospitality-gold);
+    text-decoration: none;
+    transition: var(--transition-smooth);
+}
+
+.hospitality-link:hover {
+    color: var(--hospitality-light-gold);
+    text-decoration: underline;
+}
+
+.hospitality-link:active {
+    color: var(--hospitality-dark-beige);
+}
+
+/* Дополнительные анимации */
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+}
+
+.hospitality-pulse {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+/* Дополнительные адаптивные стили */
+@media (max-width: 1024px) {
+    .hospitality-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .hospitality-container {
+        padding: 0.5rem;
+    }
+    
+    .hospitality-card {
+        margin: 0.5rem;
+    }
+}
